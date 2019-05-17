@@ -1,0 +1,91 @@
+# depslib dependency file v1.0
+1558043494 source:/media/alumno/KINGSTON/PrimerParcial.-/parcial_matias/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1558043494 /media/alumno/KINGSTON/PrimerParcial.-/parcial_matias/utn.h
+
+1558043494 source:/media/alumno/KINGSTON/PrimerParcial.-/parcial_matias/main.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"fantasma.h"
+
+1558043518 /media/alumno/KINGSTON/PrimerParcial.-/parcial_matias/fantasma.h
+
+1558043562 source:/media/alumno/KINGSTON/PrimerParcial.-/parcial_matias/fantasma.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"fantasma.h"
+
+1558044604 source:/media/alumno/KINGSTON/PrimerParcial.-/parcial_matias/orquesta.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"orquesta.h"
+
+1558044316 /media/alumno/KINGSTON/PrimerParcial.-/parcial_matias/orquesta.h
+
+1558045341 source:/home/alumno/Documentos/parcial_matias/fantasma.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"fantasma.h"
+
+1558043494 /home/alumno/Documentos/parcial_matias/utn.h
+
+1558043518 /home/alumno/Documentos/parcial_matias/fantasma.h
+
+1558050060 source:/home/alumno/Documentos/parcial_matias/main.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"orquesta.h"
+	"instrumento.h"
+	"musico.h"
+
+1558050192 source:/home/alumno/Documentos/parcial_matias/orquesta.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"orquesta.h"
+
+1558049674 /home/alumno/Documentos/parcial_matias/orquesta.h
+
+1558043494 source:/home/alumno/Documentos/parcial_matias/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1558047340 source:/home/alumno/Documentos/parcial_matias/instrumento.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"instrumento.h"
+
+1558045870 /home/alumno/Documentos/parcial_matias/instrumento.h
+
+1558050657 source:/home/alumno/Documentos/parcial_matias/musico.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"musico.h"
+	"instrumento.h"
+	"orquesta.h"
+
+1558050050 /home/alumno/Documentos/parcial_matias/musico.h
+
