@@ -31,15 +31,37 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="fantasma.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fantasma.h" />
+		<Unit filename="informes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="informes.h" />
+		<Unit filename="instrumento.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="instrumento.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="musico.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="musico.h" />
+		<Unit filename="orquesta.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="orquesta.h" />
 		<Unit filename="utn.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="utn.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
+			<envvars />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

@@ -142,37 +142,57 @@ int musico_buscarString(Musico array[], int size, char* valorBuscado, int* indic
 
 
 void musico_hardcodeo(Musico array[]){
+    ///Orquesta (2 id1 -1  id2 - 1 id3 - 2 id4)
+    ///Instrumento (1 id1 - 2 id2 -  id3 - 2 id4 - 1 id5 - id6 -  id7)
+
     array[0].idUnico=1;
     array[0].isEmpty=0;
-    strcpy(array[0].nombre,"matias");
-    strcpy(array[0].apellido,"palmieri");
-    array[0].edad=20;
-    array[0].idInstrumento=1;
-    array[0].idOrquesta=2;
+    strcpy(array[0].nombre,"Mus1");
+    strcpy(array[0].apellido,"Amus1");
+    array[0].edad=30;
+    array[0].idInstrumento=2;
+    array[0].idOrquesta=1;
 
     array[1].idUnico=2;
     array[1].isEmpty=0;
-    strcpy(array[1].nombre,"paulo");
-    strcpy(array[1].apellido,"londra");
-    array[1].edad=25;
-    array[1].idInstrumento=3;
-    array[1].idOrquesta=1;
+    strcpy(array[1].nombre,"Mus2");
+    strcpy(array[1].apellido,"Amus2");
+    array[1].edad=20;
+    array[1].idInstrumento=5;
+    array[1].idOrquesta=2;///este
 
     array[2].idUnico=3;
     array[2].isEmpty=0;
-    strcpy(array[2].nombre,"valentino");
-    strcpy(array[2].apellido,"woz");
-    array[2].edad=22;
-    array[2].idInstrumento=1;
-    array[2].idOrquesta=3;
+    strcpy(array[2].nombre,"Mus3");
+    strcpy(array[2].apellido,"Amus3");
+    array[2].edad=25;
+    array[2].idInstrumento=2;
+    array[2].idOrquesta=4;
 
     array[3].idUnico=4;
     array[3].isEmpty=0;
-    strcpy(array[3].nombre,"Dtoke");
-    strcpy(array[3].apellido,"Sebastian");
-    array[3].edad=35;
-    array[3].idInstrumento=4;
-    array[3].idOrquesta=1;
+    strcpy(array[3].nombre,"Mus4");
+    strcpy(array[3].apellido,"Amus4");
+    array[3].edad=27;
+    array[3].idInstrumento=1;
+    array[3].idOrquesta=4;///este
+
+    array[4].idUnico=5;
+    array[4].isEmpty=0;
+    strcpy(array[4].nombre,"Mus5");
+    strcpy(array[4].apellido,"Amus5");
+    array[4].edad=22;
+    array[4].idInstrumento=3;
+    array[4].idOrquesta=1;
+
+    array[5].idUnico=6;
+    array[5].isEmpty=0;
+    strcpy(array[5].nombre,"Mus6");
+    strcpy(array[5].apellido,"Amus6");
+    array[5].edad=35;
+    array[5].idInstrumento=4;
+    array[5].idOrquesta=3;///este
+
 }
 
 //*****************************************
@@ -406,7 +426,6 @@ int musico_listar(Musico array[], int size)                      //cambiar music
                        array[i].apellido,
                        array[i].idOrquesta,
                        array[i].idInstrumento
-
                        );
             }
         retorno=0;
@@ -420,20 +439,41 @@ int musico_lista(Musico array){
 
     if(array.isEmpty == 0)
     {
-        printf("\n ID: %d edad: %d nombre: %s apellido: %s ",
+        printf("\n(M) ID: %d edad: %d nombre: %s apellido: %s ID orquesta: %d ID instrumento: %d",
             array.idUnico,
             array.edad,
-            //array.varFloat,
             array.nombre,
-            array.apellido
-            //array.varChar,
-            //array.edadAux,
-            //array.varFloatAux,
-            //array.nombreAux
+            array.apellido,
+            array.idOrquesta,
+            array.idInstrumento
             );
     }
     return 0;
 }
+
+int musico_listaIDString(Musico array){
+
+    if(array.isEmpty == 0)
+    {
+        printf("\n\n ID: %d edad: %d nombre: %s apellido: %s \n",
+            array.idUnico,
+            array.edad,
+            array.nombre,
+            array.apellido
+            );
+        if(array.idOrquesta==1){printf("ID Orquesta: Sinfonica   ");}
+        if(array.idOrquesta==2){printf("ID Orquesta: Filarmonica   ");}
+        if(array.idOrquesta==3){printf("ID Orquesta: Camara   ");}
+
+        if(array.idInstrumento==1){printf("ID Instrumento: Cuerdas");}
+        if(array.idInstrumento==2){printf("ID Instrumento: viento-madera");}
+        if(array.idInstrumento==3){printf("ID Instrumento: viento-metal");}
+        if(array.idInstrumento==4){printf("ID Instrumento: Percusion");}
+
+    }
+    return 0;
+}
+
 
 void musico_imprimeUnMusico(Musico array[], int posicion){
     /*printf("\n ID: %d\t edad: %d\t varFloat: %f\n nombre: %s\t apellido: %s\n varChar %c\t edadAux: %d\t varFloatAux: %f\n nombreAux: %s",
@@ -580,4 +620,53 @@ void musico_semibaja(Musico array[],int size, int idAbajar){
             array[i].isEmpty =1;
         }
     }
+}
+
+
+
+void OrdenaMusicosInsercion(Musico array[],int size){
+    int i;
+    int j;
+    Musico aux;
+    int auxEdad;
+
+    musico_listar(array,size);
+
+    for (i=1; i<size; i++){
+        aux = array[i];
+        auxEdad = array[i].edad;
+        j = i - 1;
+        while ( (array[j].edad < auxEdad) && (j >= 0) ){
+            array[j+1] = array[j];
+            j--;
+        }
+        array[j+1] = aux;
+
+    }
+    printf("\n-------------------------------------------\n-------------------------------------------\n");
+    musico_listar(array,size);
+}
+
+
+void OrdenaMusicosInsercionString(Musico array[],int size){
+    int i;
+    int j;
+    Musico aux;
+    char auxNombre[20];
+
+    musico_listar(array,size);
+
+    for (i=1; i<size; i++){
+        aux = array[i];
+        strcpy(auxNombre , array[i].nombre);
+        j = i - 1;
+        while ( (strcmp (array[j].nombre , auxNombre) > 0) && (j >= 0) ){
+            array[j+1] = array[j];
+            j--;
+        }
+        array[j+1] = aux;
+
+    }
+    printf("\n-------------------------------------------\n-------------------------------------------\n");
+    musico_listar(array,size);
 }

@@ -5,6 +5,8 @@
 #include "orquesta.h"
 #include "instrumento.h"
 #include "musico.h"
+#include "informes.h"
+//#include "fantasma.h"
 #define TAM_ORQUESTA 50
 #define TAM_INSTRUMENTO 20
 #define TAM_MUSICO 1000
@@ -14,9 +16,15 @@ int main()
 {
     int opcion;
     int contadorIdOrquesta=4;                   //cambiar
-    int contadorIdInstrumento=4;
-    int contadorIdMusico=4;
+    int contadorIdInstrumento=5;
+    int contadorIdMusico=6;
     int IdFutBaja;
+
+
+   // Fantasma arrayFantasma[TAM_MUSICO];
+   // fantasma_Inicializar(arrayFantasma,TAM_MUSICO);
+   // fantasma_hardcodeo(arrayFantasma);
+
 
     Orquesta arrayOrquesta[TAM_ORQUESTA];
     Instrumento arrayInstrumento[TAM_ORQUESTA];
@@ -33,7 +41,7 @@ int main()
     do
     {
         utn_getUnsignedInt("\n\t\tMENU\n1) Agregar orquesta \n2) Eliminar orquesta \n3) Imprimir orquesta \n4) Agregar Musico \n5) Modificar Musico \n"
-                               "6) Eliminar Musico  \n7) Imprimir Musicos  \n8) Agregar Instrumento  \n9) Imprimir Instrumentos  \n"
+                               "6) Eliminar Musico  \n7) Imprimir Musicos  \n8) Agregar Instrumento  \n9) Imprimir Instrumentos  \n 10)INFORMES\n"
                                //"11) Alta socio \n12) Modificar socio \n13) Baja socio \n14) Listar socio"
                                "\n16) Salir\n \tIngrese una opcion: ",                //cambiar
                       "\nError",1,sizeof(int),1,17,1,&opcion);
@@ -68,11 +76,71 @@ int main()
             case 9://Listar
                 instrumento_listar(arrayInstrumento,TAM_INSTRUMENTO);
                 break;
-            case 10://Ordenar
+            case 10:
+                do{
+                        utn_getUnsignedInt("\n\t\tMENU DE INFORMES\n1)   \n2)   \n3)   \n4)   \n5)   \n"
+                               "6)    \n7)    \n8)    \n9)    \n10)   \n"
+                               //"11) Alta socio \n12) Modificar socio \n13) Baja socio \n14) Listar socio"
+                               "\n16) Salir\n \tIngrese una opcion: ",                //cambiar
+                      "\nError",1,sizeof(int),1,17,1,&opcion);
 
-                break;
+                    switch(opcion)
+                    {
+                            case 1:
+
+                                getchar();
+                                break;
+                            case 2:
+                                opcionB(arrayOrquesta, TAM_ORQUESTA ,arrayMusico, TAM_MUSICO ,arrayInstrumento, TAM_INSTRUMENTO);
+                                getchar();
+                                break;
+                            case 3:
+                                opcionC( arrayOrquesta,  TAM_ORQUESTA);
+                                getchar();
+                                break;
+                            case 4:
+
+                                 getchar();
+                                break;
+                            case 5:///e
+                                opcionE(arrayOrquesta,TAM_ORQUESTA ,arrayMusico,TAM_MUSICO ,arrayInstrumento,TAM_INSTRUMENTO);
+                                getchar();
+                                break;
+                            case 6:
+
+                                getchar();
+                                break;
+                            case 7:
+
+                                getchar();
+                                break;
+                            case 8:
+
+                                getchar();
+                                break;
+                            case 9:
+                                OrdenaMusicosInsercion(arrayMusico, TAM_MUSICO);
+                                OrdenaMusicosInsercionString(arrayMusico, TAM_MUSICO);
+                                break;
+                            case 10:
+                                opcion10( arrayOrquesta,TAM_ORQUESTA );
+                                break;
+                            case 11:
+                            opcion1( arrayMusico, TAM_MUSICO, 1 );
+                                break;
+                            case 12:
+                            opcion2(arrayMusico, TAM_MUSICO, 3 );
+                                break;
+                            case 13:
+                                break;
+                            case 14:
+                                break;
+                            case 15:
+                                opcion =15;
+                                break;
+                        }
+                    }while(opcion != 15);
             case 11:
-
                 break;
             case 12:
 

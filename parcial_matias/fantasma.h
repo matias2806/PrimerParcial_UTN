@@ -41,3 +41,4 @@ void fantasma_imprimeUnFantasma(Fantasma array[], int posicion);
 int fantasma_ordenarPorString(Fantasma array[],int size);                              //cambiar fantasma
 void fantasma_ordenarPorString2(Fantasma array[],int size);
 void fantasma_ordenarPorEntero(Fantasma array[],int size);
+int fantasma_ordenarPorStringInsercion(Fantasma array[],int size);

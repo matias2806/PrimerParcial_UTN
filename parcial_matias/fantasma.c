@@ -495,7 +495,7 @@ int fantasma_ordenarPorString(Fantasma array[],int size)                        
     return retorno;
 }*/
 
-
+///BURBUJA
 void fantasma_ordenarPorString2(Fantasma array[],int size)                              //cambiar autor
 {
     printf("\nORDENADO POR APELLIDO Y NOMBRE\n");
@@ -525,7 +525,7 @@ void fantasma_ordenarPorString2(Fantasma array[],int size)                      
         }
 }
 
-
+///BURBUJA
 void fantasma_ordenarPorEntero(Fantasma array[],int size)                              //cambiar autor
 {
     printf("\nORDENADO POR ENTERO Y FLOAT\n");
@@ -555,4 +555,70 @@ void fantasma_ordenarPorEntero(Fantasma array[],int size)                       
                 }
             }
         }
+}
+
+
+
+//Ordenar
+/** \brief Ordena por campo XXXXX los elementos de un array
+* \param array fantasma Array de fantasma
+* \param size int Tamaño del array
+* \return int Return (-1) si Error [largo no valido o NULL pointer] - (0) si se ordena exitosamente
+*
+*/
+int fantasma_ordenarPorStringInsercion(Fantasma array[],int size)                              //cambiar fantasma
+{
+    int retorno=-1;
+    int i, j;
+
+    char BvarString[TEXT_SIZE];
+    int BvarInt;
+    float BvarFloat;
+    char BvarChar;
+    char BvarLongString[TEXT_SIZE];
+    int BvarIntAux;
+    float BvarFloatAux;
+    char BvarStringAux[TEXT_SIZE];
+    int bufferIsEmpty;
+
+    if(array!=NULL && size>=0)
+    {
+        for (i = 1; i < size; i++)
+        {
+            strcpy(BvarString,array[i].varString);
+            strcpy(BvarLongString,array[i].varLongString);
+            BvarInt=array[i].idUnico;
+            bufferIsEmpty=array[i].isEmpty;
+            BvarChar=array[i].varChar;
+            BvarFloat=array[i].varFloat;
+            strcpy(BvarStringAux,array[i].varStringAux);
+            BvarIntAux=array[i].varIntAux;
+            BvarFloatAux=array[i].varFloatAux;
+            j = i - 1;
+
+            while ((j >= 0) && strcmp(BvarString,array[j].varString)<0)         {
+                strcpy(array[j + 1].varString,array[j].varString);
+                array[j + 1].idUnico=array[j].idUnico;
+                array[j + 1].isEmpty=array[j].isEmpty;
+                array[j + 1].varChar=array[j].varChar;
+                array[j + 1].varFloat=array[j].varFloat;
+                array[j + 1].varIntAux=array[j].varIntAux;
+                array[j + 1].varFloatAux=array[j].varFloatAux;
+                strcpy(array[j + 1].varLongString,array[j].varLongString);
+                strcpy(array[j + 1].varStringAux,array[j].varStringAux);
+                j--;
+            }
+            strcpy(array[j + 1].varString,BvarString);
+            strcpy(array[j + 1].varLongString,BvarLongString);
+            array[j + 1].idUnico=BvarInt;
+            array[j + 1].isEmpty=bufferIsEmpty;
+            array[j + 1].varIntAux=BvarIntAux;
+            array[j + 1].varChar=BvarChar;
+            array[j + 1].varFloatAux=BvarFloatAux;
+            array[j + 1].varFloat=BvarFloat;
+            strcpy(array[j + 1].varStringAux,BvarStringAux);
+        }
+        retorno=0;
+    }
+    return retorno;
 }

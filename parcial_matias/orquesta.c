@@ -142,31 +142,27 @@ int orquesta_buscarString(Orquesta array[], int size, char* valorBuscado, int* i
 void orquesta_hardcodeo(Orquesta array[]){
     array[0].idUnico=1;
     array[0].isEmpty=0;
-    strcpy(array[0].nombre,"Chettos");
-    strcpy(array[0].lugar,"roma");
+    strcpy(array[0].nombre,"Orquesta1");
+    strcpy(array[0].lugar,"Lugar1");
     array[0].tipo=1;
-
-
 
     array[1].idUnico=2;
     array[1].isEmpty=0;
-    strcpy(array[1].nombre,"LOs adinerados");
-    strcpy(array[1].lugar,"la plata");
-    array[1].tipo=3;
-
+    strcpy(array[1].nombre,"Orquesta2");
+    strcpy(array[1].lugar,"Lugar1");
+    array[1].tipo=2;
 
     array[2].idUnico=3;
     array[2].isEmpty=0;
-    strcpy(array[2].nombre,"Mamaa miaa");
-    strcpy(array[2].lugar,"san juan");
-    array[2].tipo=2;
-
+    strcpy(array[2].nombre,"Orquesta3");
+    strcpy(array[2].lugar,"Lugar3");
+    array[2].tipo=3;
 
     array[3].idUnico=4;
     array[3].isEmpty=0;
-    strcpy(array[3].nombre,"La capita");
-    strcpy(array[3].lugar,"buenos aires");
-    array[3].tipo=1;
+    strcpy(array[3].nombre,"Orquesta4");
+    strcpy(array[3].lugar,"Lugar4");
+    array[3].tipo=3;
 
 }
 
@@ -413,7 +409,7 @@ int orquesta_lista(Orquesta array){
 
     if(array.isEmpty == 0)
     {
-        printf("\n ID: %d tipo: %d nombre: %s lugar: %s ",
+        printf("\n(O) ID: %d tipo: %d nombre: %s lugar: %s ",
             array.idUnico,
             array.tipo,
             //array.varFloat,

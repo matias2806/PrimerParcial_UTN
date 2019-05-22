@@ -140,25 +140,34 @@ int instrumento_buscarString(Instrumento array[], int size, char* valorBuscado, 
 
 
 void instrumento_hardcodeo(Instrumento array[]){
+    ///tipo 1 =2
+    ///tipo 2 =2
+    ///tipo 3 =1
+    ///tipo 4 =2
     array[0].idUnico=1;
     array[0].isEmpty=0;
-    strcpy(array[0].nombre,"agudo");
-    array[0].tipo=3;
+    strcpy(array[0].nombre,"inst1");
+    array[0].tipo=1;
 
     array[1].idUnico=2;
     array[1].isEmpty=0;
-    strcpy(array[1].nombre,"grabe");
-    array[1].tipo=4;
+    strcpy(array[1].nombre,"inst2");
+    array[1].tipo=2;
 
     array[2].idUnico=3;
     array[2].isEmpty=0;
-    strcpy(array[2].nombre,"fino");
+    strcpy(array[2].nombre,"inst3");
     array[2].tipo=2;
 
     array[3].idUnico=4;
     array[3].isEmpty=0;
-    strcpy(array[3].nombre,"normal");
-    array[3].tipo=1;
+    strcpy(array[3].nombre,"inst4");
+    array[3].tipo=3;
+
+    array[4].idUnico=5;
+    array[4].isEmpty=0;
+    strcpy(array[4].nombre,"inst5");
+    array[4].tipo=4;
 
 }
 
@@ -402,7 +411,7 @@ int instrumento_lista(Instrumento array){
 
     if(array.isEmpty == 0)
     {
-        printf("\n ID: %d tipo: %d nombre: %s ",
+        printf("\n(I) ID: %d tipo: %d nombre: %s ",
             array.idUnico,
             array.tipo,
             //array.varFloat,

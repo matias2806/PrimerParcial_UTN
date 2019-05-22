@@ -37,6 +37,7 @@ int musico_modificar(Musico array[], int sizeArray);                            
 
 int musico_listar(Musico array[], int size);                      //cambiar musico
 int musico_lista(Musico array);
+int musico_listaIDString(Musico array);
 void musico_imprimeUnMusico(Musico array[], int posicion);
 
 int musico_ordenarPorString(Musico array[],int size);                              //cambiar musico
@@ -45,3 +46,5 @@ void musico_ordenarPorEntero(Musico array[],int size);
 
 
 void musico_semibaja(Musico array[],int size, int idAbajar);
+void OrdenaMusicosInsercion(Musico array[],int size);
+void OrdenaMusicosInsercionString(Musico array[],int size);
